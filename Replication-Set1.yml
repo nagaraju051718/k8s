@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-rs
+  labels:
+    type: qaserver
+    author: raju
+spec:
+  replicas: 2
+  selector: 
+   matchLabels:
+     type: qaserver
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        type: qaserver
+    spec:
+      containers:
+        - name: nginx-pod
+          image: nginx
+          ports:
+            - containerPort: 80
+
+...

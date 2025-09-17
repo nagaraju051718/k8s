@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: httpd-rc
+  labels:
+    type: webersver
+    author: raju
+spec:
+  replicas: 2
+  template: 
+    metadata:
+      name: httpd-pod
+      labels: 
+       type: webserver
+    spec:
+      containers:
+        - name: httpd-raju
+          image: httpd
+          ports:
+            - containerPort: 80
+              hostPort: 9090
+...

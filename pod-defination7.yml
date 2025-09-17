@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: openjdk-pod
+  namespace: test-ns
+  labels:
+    app: myopenjdk
+    author: raju
+spec:
+  containers:
+    - name: openjdk-pod
+      image: openjdk-17-jdk
+...
