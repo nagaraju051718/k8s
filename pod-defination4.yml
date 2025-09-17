@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-raju
+  labels:
+    app: tomee
+    author: raju
+spec:
+  containers:
+    - name: tomcat-pod
+      image: tomcat
+      ports:
+        - containerPort: 8080
+          hostPort: 90
+...
