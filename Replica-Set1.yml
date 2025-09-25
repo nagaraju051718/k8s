@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: prodserver-rs
+  labels:
+    type: myhttpd
+    author: raju
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: myhttpd
+  template:
+    metadata:
+      labels:
+        type: myhttpd
+    spec:
+      containers:
+        - name: myraju
+          image: httpd
+
